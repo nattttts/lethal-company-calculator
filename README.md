@@ -1,0 +1,1 @@
+# lethal-company-calculator
