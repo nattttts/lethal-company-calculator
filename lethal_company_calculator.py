@@ -12,9 +12,16 @@ while not want_to_exit:
         continue_choice = input("Do you want to continue? (Y/N): ")
         if continue_choice == "N" or continue_choice == "n":
             want_to_exit = True    
+    
     elif choice == 2:
         quota = int(input("What's the quota?: "))
         total_money_earned = int(input("How much money do you want to have including overtime bonus?: $"))
+        
+        has_existing_money = input("Do you have existing credits?(Y/N): ")
+        if has_existing_money == "Y" or has_existing_money == "y":
+            original_credits_on_ship = input("How much do you have?: ")
+            total_money_earned -= original_credits_on_ship
+
         check_decimal_points = (5*total_money_earned + quota + 75) % 6
         if check_decimal_points == 0:
             how_much_sold = int(5*total_money_earned + quota + 75)/6
@@ -22,9 +29,11 @@ while not want_to_exit:
         else:
             how_much_sold = int((5*total_money_earned + quota + 75)/6) + 1
             print(f"You need to sell: ${how_much_sold}")
+
         continue_choice = input("Do you want to continue? (Y/N): ")
         if continue_choice == "N" or continue_choice == "n":
             want_to_exit = True
+    
     elif choice == 3:
         quota = int(input("What's the quota?: "))
         value_on_ship = int(input("How much value do you have on ship?: "))
@@ -41,7 +50,7 @@ while not want_to_exit:
         continue_choice = input("Do you want to continue? (Y/N): ")
         if continue_choice == "N" or continue_choice == "n":
             want_to_exit = True   
-    #want to ask quota, then ask for how much value on ship already, then calc avg value per day to get    
+
     else:
         print("No such choice.")
  
