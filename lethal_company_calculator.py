@@ -19,7 +19,7 @@ while not want_to_exit:
         
         has_existing_money = input("Do you have existing credits?(Y/N): ")
         if has_existing_money == "Y" or has_existing_money == "y":
-            original_credits_on_ship = input("How much do you have?: ")
+            original_credits_on_ship = input(int("How much do you have?: "))
             total_money_earned -= original_credits_on_ship
 
         check_decimal_points = (5*total_money_earned + quota + 75) % 6
